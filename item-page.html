@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+
+
+</head>
+<body onload="itemImgFn()" style="padding: 0px; margin: 0px; box-sizing: border-box;">
+
+
+
+    <!-- Navbar-->
+   <nav class="navbar navbar-expand-lg bg-light fixed-top   ">
+    <div class="container-fluid ">
+      <a  class="navbar-brand" href="#"><img id="logo" src="Resources/logo.jpg" class="rounded-circle"></a>
+      <button  class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse " id="navbarTogglerDemo02">
+        <ul    class="navbar-nav  me-auto mb-lg-0">
+          <li class="nav-item">
+            <a style="color: #6cb975" class="nav-link text-uppercase active  " aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-uppercase " href="#">Furniture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-uppercase " href="#" tabindex="-1" aria-disabled="true">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase " href="#" tabindex="-1" aria-disabled="true">Pages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase " href="#" tabindex="-1" aria-disabled="true">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase  " href="#" tabindex="-1" aria-disabled="true">Contact</a>
+          </li>
+        </ul>
+      
+        <i  class="bi bi-search nav-link "></i>
+        <i class="bi bi-heart nav-link "></i>
+        <i class="bi bi-bag nav-link " ></i>
+        <a href="#"  class="text-uppercase nav-link " data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+      
+      </div>
+    </div>
+  </nav> 
+
+
+
+  <!-- the login modal  -->
+
+  <div id="exampleModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5>The Login Account</h5>
+          <button  type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- the  login form -->
+          <form action="Form.html" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class=" w-100" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class=" w-100 " id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <button type="button" class="btn yellow-hover">Login</button>
+            <button type="submit" class="btn yellow-hover">Register NOW</button>
+          </form>
+
+<!-- the modal closing -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- the body -->
+
+  <div class="container mt-5">
+      <div class="row mt-5 d-flex justify-content-between align-items-center  ">
+          <div class="col-12 col-md-9 col-lg-6  mb-3 pt-5">
+              <img id="itemImg" class="img-responsive w-75 mt-5  hover-zoom" src="http://furnihaus.kaththemes.com/demo/wp-content/uploads/2017/09/sofa-3-300x300.jpg">
+          </div>
+          <div class="col-12 col-md-9 col-lg-5" >
+              <h1>Veneto Arm Chair</h1>
+              <p class="text-danger">This product is currently out of stock and unavailable.</p>
+              <span><i class="bi bi-heart"></i> Add To Wish List</span><br>
+              <span class="text-muted">Categories:</span><span> Arm chair, Chair</span><br>
+              <button class="btn yellow-hover mt-3"><i class="bi bi-bag"></i> Add to Bag</button>
+        </div>
+      </div>
+      <!-- the end of the first row  -->
+
+      <!-- the second row  -->
+      <hr>
+      <div class="row d-flex justify-content-between align-items-center">
+
+              <!-- the left colums -->
+          <div class="col-12 col-lg-3 col-md-4 ">
+
+            <div id="list-example" class="list-group">
+                <a  id="desBtn" onclick="displayDes()" class="list-group-item  yellow-hover" >Description</a>
+                <a id="addBtn" onclick="displayAdd()" class="list-group-item  yellow-hover" >Additional Information</a>
+                <a id="revBtn" onclick="displayRev()"  class="list-group-item  yellow-hover" >Reviews (0)</a>
+              </div>
+             
+
+
+          </div>
+           <!-- the right colums -->
+         <div id="discr" class="col-12 col-lg-8 col-md-7 d-block w-100">
+              <h2 class="mt-5">Description</h2>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at arcu ut elit dictum luctus in ut ipsum. Fusce sed imperdiet tortor. Morbi suscipit mi vel ante fermentum, convallis bibendum leo rhoncus. Aliquam vitae ullamcorper mi, a laoreet diam. Quisque scelerisque condimentum nisl id dignissim. Cras vel urna consequat, tincidunt mi a, lacinia tellus. Sed vel cursus elit. Maecenas at turpis diam. Fusce a mauris commodo, eleifend lorem ac, mattis enim. Pellentesque at maximus leo. Proin id auctor erat, et porta quam. Aliquam quis auctor erat.
+              </p><p class="text-muted">
+                Sed ornare sit amet arcu eu volutpat. Sed eu purus augue. Etiam tellus magna, mollis at mauris et, laoreet euismod purus. Fusce condimentum, purus eget finibus porttitor, magna nisi dignissim tortor, ut ornare leo lectus sed leo. Ut justo dolor, ullamcorper id sem eget, sagittis euismod libero. Duis id hendrerit metus. Proin nec turpis eros.
+            </p><p class="text-muted">
+                Etiam ac tempor nisi. Quisque nisl dui, iaculis id justo eget, hendrerit maximus orci. Quisque ornare efficitur nunc, eget blandit felis dapibus quis. Proin a magna aliquet, euismod nisl eget, cursus ex. Sed dui tellus, malesuada in gravida eu, tempus vitae sem. Aliquam erat volutpat. Phasellus sit amet vehicula nibh. Phasellus luctus felis in diam mattis semper. Nullam vitae nulla elit.
+            </p><p class="text-muted">
+                Donec ultrices tristique risus eu consectetur. Pellentesque porta est vitae sollicitudin viverra. Fusce malesuada sodales tortor, vitae ultrices ipsum sodales nec. Praesent lorem metus, posuere a dignissim at, pretium a justo. Vivamus dictum facilisis lacus, ut semper augue ullamcorper sit amet. Proin rhoncus lobortis elementum. Proin euismod, ante convallis rhoncus placerat, elit ante posuere nulla, in euismod ex dui sed elit. Nulla id posuere ipsum. Vivamus ultricies ligula eu erat sagittis, quis interdum lorem lacinia.
+            </p>
+
+          </div>
+          <!-- additional information -->
+
+
+          <div id="additional" class="col-10 col-lg-8 col-md-7 d-none ">
+
+            <table class="table">
+                <tr class="">
+                <th  class="text-primary ">color:</th>
+                <td class=""><p> Black, Blue, Green</p>
+              </td>
+            </tr>
+                <tr  class="">
+                <th class="text-primary">size:</th>
+                <td class=""><p> L, M, S, XL, XXL</p>
+               </td>
+            </tr>
+        </table>
+
+        </div>
+
+
+
+
+
+        <div id="review" class="col-10 col-lg-8 col-md-7 shadow rounded d-none  ">
+
+          <h1>Reviews</h1>
+          <p class="text-muted">There is no reviews yet</p>
+          <h2>Be the first to review “Veneto Arm Chair”</h2>
+          <span class="bg-light my-3">Your email address will not be published. Required fields are marked *</span><br>
+          <span class="d-flex my-2">Your Rating <span class="text-danger">*</span></span>
+          <!-- the rating stars -->
+
+
+ <div class="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div><br>
+<!-- the rating stars -->
+          <div class="mb-3"style="width:90%;"><br>
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3"style="width:90%;">
+            <label for="exampleFormControlTextarea1" class="form-label">Your Review</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+          <button type="button" class="btn yellow-hover mb-3 w-75">Submit</button>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="row my-3"><h1 style="text-align:center;">Related Products</h1></div>
+
+    <div class="row  d-flex justify-content-between align-items-center" style="height:400px">
+
+        <div class="col-12 col-md-5 col-lg-2 d-flex justify-content-center align-items-center shadow rounded " style="height:inherit;">
+            <div class="bg-image w-100  d-flex justify-content-center align-items-center hover-zoom" style="background:url(http://furnihaus.kaththemes.com/demo/wp-content/uploads/2017/10/sofa-1-300x300.jpg) no-repeat center;height:inherit;">
+                  <button class="btn yellow-hover"> View Item</button>
+            </div>
+         </div>
+
+
+          <div class="col-12 col-md-5 col-lg-2 d-flex justify-content-center align-items-center shadow rounded" style="height:inherit;">
+            <div class="bg-image w-100  d-flex justify-content-center align-items-center hover-zoom" style="background:url(http://furnihaus.kaththemes.com/demo/wp-content/uploads/2017/09/chari-black-300x300.jpg) no-repeat center;height:inherit;">
+                <button class="btn yellow-hover"> View Item</button>
+          </div>
+       </div>
+
+
+       <div class="col-12 col-md-5 col-lg-2 d-flex justify-content-center align-items-center shadow rounded" style="height:inherit;">
+        <div class="bg-image w-100  d-flex justify-content-center align-items-center hover-zoom" style="background:url(http://furnihaus.kaththemes.com/demo/wp-content/uploads/2017/09/cusion-300x300.jpg) no-repeat center;height:inherit;">
+            <button class="btn yellow-hover"> View Item</button>
+      </div>
+      </div>
+
+
+      <div class="col-12 col-md-5 col-lg-2 d-flex justify-content-center align-items-center shadow rounded" style="height:inherit;">
+        <div class="bg-image w-100  d-flex justify-content-center align-items-center hover-zoom" style="background:url(http://furnihaus.kaththemes.com/demo/wp-content/uploads/2017/08/bamboo-chair-300x300.png) no-repeat center;height:inherit;">
+            <button class="btn yellow-hover"> View Item</button>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+        <!-- Footer -->
+        <div class="row">
+<footer class="text-center text-lg-start bg-light text-muted mt-5">
+    <!-- Section: Social media -->
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="#" class="me-4 ">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" class="me-4 ">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="#" class="me-4 ">
+          <i class="bi bi-google"></i>
+        </a>
+        <a href="#" class="me-4 ">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#" class="me-4 ">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Furnitures
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Chairs</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Office</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">BedRooms</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Outdoor</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              More Help
+            </h6>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class=" nav-link text-uppercase">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="#">Mark Abdallah</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>
+  <!-- Footer -->
+    
+      
+
+  </div>
+  <script type="text/javascript" src="javascript.js"></script>
+
+
+
+    
+</body>
+</html>
